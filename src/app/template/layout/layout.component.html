@@ -1,0 +1,13 @@
+<header class="bg-primary text-white w-full h-[60px] flex justify-between items-center shadow-md p-4">
+  <h1 class="font-semibold text-[30px] text-center">PRODUTOS</h1>
+  <button class="text-[14px] flex items-center hover:text-gray-200" (click)="sendLogout()">
+    <mat-icon fontIcon="exit_to_app" class="text-[15px] mt-2"></mat-icon>
+    SAIR
+  </button>
+</header>
+<section class="bg-gray-200 w-full p-10 flex justify-center items-center">
+  <router-outlet></router-outlet>
+</section>
+<footer class="flex justify-center w-full font-light text-gray-900 pb-4">
+  ©crudprodutos | 2025
+</footer>

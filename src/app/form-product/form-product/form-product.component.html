@@ -1,0 +1,43 @@
+<div
+  class="flex flex-col gap-8 justify-start items-center lg:w-[400px] bg-white rounded-lg shadow-md p-6 px-8 pb-8 z-10 animate-fade-up">
+
+  <div class="flex w-full justify-center">
+    <div class="w-40 rounded-md p-3">
+      <h1 class="text-center font-bold text-primary">
+        FORMULÁRIO
+      </h1>
+    </div>
+  </div>
+
+  <form class="flex flex-col w-full gap-3" [formGroup]="fieldsForm" (ngSubmit)="registerProduct()">
+    <mat-form-field appearance="fill" color="primary">
+      <mat-label>Nome</mat-label>
+      <input matInput type="text" name="name" formControlName="name" [(ngModel)]="product.name" />
+      <mat-error>
+        {{isFieldInvalid('name')}}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" color="primary">
+      <mat-label>Marca</mat-label>
+      <input matInput type="email" name="mark" formControlName="mark" [(ngModel)]="product.mark" />
+      <mat-error>
+        {{isFieldInvalid('mark')}}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" color="primary">
+      <mat-label>Valor (R$)</mat-label>
+      <input matInput type="number" name="value" formControlName="value" [(ngModel)]="product.value" />
+      <mat-error>
+        {{isFieldInvalid('value')}}
+      </mat-error>
+    </mat-form-field>
+    <div class="flex flex-row gap-3">
+      <button type="button"
+        class="uppercase w-full rounded-md shadow-lg border border-primary p-3 bg-transparent text-primary font-semibold active:scale-95 hover:bg-gray-200"
+        (click)="navigate('/paginas/home')">cancelar</button>
+      <button type="submit"
+        class="uppercase w-full rounded-md shadow-lg p-3 bg-primary text-white font-medium active:scale-95 hover:bg-blue-600">{{
+        updating ? 'editar' : 'cadastrar' }} </button>
+    </div>
+  </form>
+</div>
